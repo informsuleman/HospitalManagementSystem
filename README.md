@@ -1,2 +1,2 @@
 # HospitalManagementSystem
-This is my first javascript project
+This is my first repository
