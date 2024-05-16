@@ -15,19 +15,25 @@ function addPatient() {
 
     // Add patient to the list
     patients.push({ name, age, gender });
-    displayPatients();
+    displayPatients(); // Update the table with the new patient
 }
 
-// Function to display all patients
+// Function to display all patients in a table format
 function displayPatients() {
-    const patientList = document.getElementById('patientList');
-    patientList.innerHTML = ''; // Clear the list
+    const patientBody = document.getElementById('patientBody');
 
-    // Display each patient
+    // Clear the table body
+    patientBody.innerHTML = '';
+
+    // Generate table rows for each patient
     patients.forEach(patient => {
-        const patientElement = document.createElement('p');
-        patientElement.textContent = `Name: ${patient.name}, Age: ${patient.age}, Gender: ${patient.gender}`;
-        patientList.appendChild(patientElement);
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${patient.name}</td>
+            <td>${patient.age}</td>
+            <td>${patient.gender}</td>
+        `;
+        patientBody.appendChild(tr);
     });
 }
 
@@ -43,5 +49,5 @@ function deletePatient() {
 
     // Remove the patient from the list
     patients.splice(patientIndex, 1);
-    displayPatients();
+    displayPatients(); // Update the table after deletion
 }

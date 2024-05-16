@@ -4,12 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Management System</title>
+    <!-- Inline CSS Styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Light grey background */
+        }
+        h1 {
+            color: #333; /* Dark grey title */
+            text-align: center;
+        }
+        table {
+            width: 100%; /* Full width */
+            margin: auto; /* Center the table */
+            border-collapse: collapse; /* Remove space between cells */
+        }
+        th, td {
+            padding: 10px; /* Space around cell content */
+            text-align: left; /* Align text to the left */
+            border-bottom: 1px solid #ddd; /* Bottom border for header and data cells */
+        }
+        th {
+            background-color: #4CAF50; /* Green header */
+            color: white; /* White text */
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2; /* Alternate row color */
+        }
+        button {
+            display: block; /* Make buttons appear below each other */
+            margin: 20px auto; /* Center the buttons horizontally */
+            padding: 10px 20px; /* Padding inside the buttons */
+            font-size: 16px; /* Larger font size */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+        button:hover {
+            background-color: #008CBA; /* Blue background on hover */
+            color: white; /* White text on hover */
+        }
+    </style>
 </head>
 <body>
     <h1>Hospital Management System</h1>
-    <div id="patientList"></div>
+    <table border="2" id="patientTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody id="patientBody"></tbody>
+    </table><br>
     <button onclick="addPatient()">Add Patient</button>
     <button onclick="deletePatient()">Delete Patient</button>
-    <script src="hospitalManagement.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
